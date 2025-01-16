@@ -221,11 +221,11 @@ EOF
 # EOF
 
 # 多线多拨:
-# cat >> .config <<EOF
+cat >> .config <<EOF
 CONFIG_PACKAGE_luci-app-syncdial=y #多拨虚拟WAN
 CONFIG_PACKAGE_luci-app-mwan3=y #MWAN负载均衡
 CONFIG_PACKAGE_luci-app-mwan3helper=n #MWAN3分流助手
-# EOF
+EOF
 
 # 第三方插件选择:
 cat >> .config <<EOF
@@ -306,17 +306,13 @@ CONFIG_PACKAGE_luci-app-sqm=n #SQM智能队列管理
 # CONFIG_PACKAGE_luci-app-dockerman=n #Docker管理
 CONFIG_PACKAGE_luci-app-ttyd=n #ttyd
 CONFIG_PACKAGE_luci-app-wireguard=n #wireguard端
-#
-# VPN相关插件(禁用):
-#
 CONFIG_PACKAGE_luci-app-v2ray-server=y #V2ray服务器
 CONFIG_PACKAGE_luci-app-pptp-server=n #PPTP VPN 服务器
-CONFIG_PACKAGE_luci-app-ipsec-vpnd=n #ipsec VPN服务
+
 CONFIG_PACKAGE_luci-app-openvpn-server=n #openvpn服务
 CONFIG_PACKAGE_luci-app-softethervpn=n #SoftEtherVPN服务器
-#
-# 文件共享相关(禁用):
-#
+
+
 CONFIG_PACKAGE_luci-app-minidlna=n #miniDLNA服务
 CONFIG_PACKAGE_luci-app-vsftpd=n #FTP 服务器
 CONFIG_PACKAGE_luci-app-samba=n #网络共享
@@ -336,6 +332,7 @@ CONFIG_PACKAGE_firewall4=y
 CONFIG_PACKAGE_curl=y
 CONFIG_PACKAGE_htop=y
 CONFIG_PACKAGE_nano=y
+CONFIG_PACKAGE_luci-app-ipsec-vpnd=n #ipsec VPN服务
 # CONFIG_PACKAGE_screen=y
 # CONFIG_PACKAGE_tree=y
 # CONFIG_PACKAGE_vim-fuller=y
